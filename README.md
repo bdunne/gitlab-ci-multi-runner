@@ -1,0 +1,1 @@
+A gitlab-ci-multi-runner in a CentOS 7 docker container to run builds in docker containers.
