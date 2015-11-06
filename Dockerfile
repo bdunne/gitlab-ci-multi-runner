@@ -4,6 +4,7 @@ MAINTAINER bdunne
 
 RUN yum -y install \
   curl \
+  nano \
   scl-utils \
   https://www.softwarecollections.org/en/scls/rhscl/git19/epel-7-x86_64/download/rhscl-git19-epel-7-x86_64.noarch.rpm
 
