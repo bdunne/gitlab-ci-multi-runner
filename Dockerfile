@@ -11,9 +11,14 @@ RUN yum -y install \
 RUN curl -sSf "https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/config_file.repo?os=centos&dist=7&source=script" -o /etc/yum.repos.d/runner_gitlab-ci-multi-runner.repo
 
 RUN yum -y install \
+  ca-certificates \
   docker \
   gitlab-ci-multi-runner \
   git19-git
+
+RUN update-ca-trust enable
+ADD gitlab.cloudforms.lab.eng.rdu2.redhat.com.crt /etc/pki/ca-trust/source/anchors
+RUN update-ca-trust extract
 
 ADD entrypoint /
 RUN chmod +x /entrypoint
