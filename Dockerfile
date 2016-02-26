@@ -17,7 +17,7 @@ RUN yum -y install \
   git19-git
 
 RUN update-ca-trust enable
-ADD gitlab.cloudforms.lab.eng.rdu2.redhat.com.crt /etc/pki/ca-trust/source/anchors
+ADD gitlab.crt /etc/pki/ca-trust/source/anchors
 RUN update-ca-trust extract
 
 ADD entrypoint /
